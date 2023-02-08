@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom';
 
 // material-ui
@@ -8,15 +7,15 @@ import { Divider, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 // project imports
 import AuthWrapper1 from '../AuthWrapper1';
 import AuthCardWrapper from '../AuthCardWrapper';
-import AuthLogin from '../auth-forms/AuthLogin';
 import Logo from 'ui-component/Logo';
+import AuthRegister from '../auth-forms/AuthRegister';
 import AuthFooter from 'ui-component/cards/AuthFooter';
 
 // assets
 
-// ================================|| AUTH3 - LOGIN ||================================ //
+// ===============================|| AUTH3 - REGISTER ||=============================== //
 
-const Login = () => {
+const Register = () => {
     const theme = useTheme();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -47,7 +46,7 @@ const Login = () => {
                                                         gutterBottom
                                                         variant={matchDownSM ? 'h3' : 'h2'}
                                                     >
-                                                        Hi, Welcome Back
+                                                        Sign up
                                                     </Typography>
                                                     <Typography
                                                         variant="caption"
@@ -61,7 +60,7 @@ const Login = () => {
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <AuthLogin />
+                                        <AuthRegister />
                                     </Grid>
                                     <Grid item xs={12}>
                                         <Divider />
@@ -70,11 +69,11 @@ const Login = () => {
                                         <Grid item container direction="column" alignItems="center" xs={12}>
                                             <Typography
                                                 component={Link}
-                                                to="/pages/register/register3"
+                                                to="/login"
                                                 variant="subtitle1"
                                                 sx={{ textDecoration: 'none' }}
                                             >
-                                                Don&apos;t have an account?
+                                                Already have an account?
                                             </Typography>
                                         </Grid>
                                     </Grid>
@@ -91,4 +90,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
