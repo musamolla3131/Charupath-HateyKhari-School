@@ -35,10 +35,13 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Google from 'assets/images/icons/social-google.svg';
+import { useContext } from 'react';
+import { AuthContext } from 'Context/UserContext';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const FirebaseLogin = ({ ...others }) => {
+    const { setLoading, signIn, googlePopup } = useContext(AuthContext);
     const theme = useTheme();
     const scriptedRef = useScriptRef();
     const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
@@ -46,7 +49,21 @@ const FirebaseLogin = ({ ...others }) => {
     const [checked, setChecked] = useState(true);
 
     const googleHandler = async () => {
-        console.error('Login');
+        googlePopup()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.email;
+                console.log(errorCode, errorMessage, email);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
 
     const [showPassword, setShowPassword] = useState(false);
