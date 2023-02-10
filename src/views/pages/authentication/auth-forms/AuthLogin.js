@@ -75,6 +75,18 @@ const FirebaseLogin = ({ ...others }) => {
         event.preventDefault();
     };
 
+    // Handle hubmit on form submit
+
+    // const handleSubmit = async (values, { setErrors, setSubmitting }) => {
+    //     try {
+    //         await signIn(values.email, values.password);
+    //         navigate(from, { replace: true });
+    //     } catch (error) {
+    //         setErrors({ submit: error.message });
+    //     }
+    //     setSubmitting(false);
+    // };
+
     return (
         <>
             <Grid container direction="column" justifyContent="center" spacing={2}>
