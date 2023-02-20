@@ -1,3 +1,4 @@
+Charupath HateyKhari School - High-Quality Education & Modern Teaching Methods. Enroll Now! Small Class Sizes, Supportive Environment, Challenging Curriculum, Extracurricular Programs. Dedicated Staff, Helping Students Reach Their Full Potential. Learn More.
 ## Follow us
 
 -   [Website](https://musamolla.com)
