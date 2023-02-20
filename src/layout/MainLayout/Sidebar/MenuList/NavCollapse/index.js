@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -27,35 +26,6 @@ const NavCollapse = ({ menu, level }) => {
         setOpen(!open);
         setSelected(!selected ? menu.id : null);
     };
-
-    const { pathname } = useLocation();
-    const checkOpenForParent = (child, id) => {
-        child.forEach((item) => {
-            if (item.url === pathname) {
-                setOpen(true);
-                setSelected(id);
-            }
-        });
-    };
-
-    // menu collapse for sub-levels
-    useEffect(() => {
-        setOpen(false);
-        setSelected(null);
-        if (menu.children) {
-            menu.children.forEach((item) => {
-                if (item.children?.length) {
-                    checkOpenForParent(item.children, menu.id);
-                }
-                if (item.url === pathname) {
-                    setSelected(menu.id);
-                    setOpen(true);
-                }
-            });
-        }
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [pathname, menu.children]);
 
     // menu collapse & item
     const menus = menu.children?.map((item) => {
