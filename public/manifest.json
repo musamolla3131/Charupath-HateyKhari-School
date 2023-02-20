@@ -1,0 +1,22 @@
+{
+  "short_name":"CHS",
+  "name":"Charupath HateyKhari School",
+  "icons":[
+    {
+      "src":"chs_logo_192x192.png",
+      "type":"image/png",
+      "sizes":"192x192",
+      "purpose":"any maskable"
+    },
+    {
+      "src":"chs_logo_512x512.png",
+      "type":"image/png",
+      "sizes":"512x512",
+      "purpose":"any maskable"
+    }
+    ],
+      "start_url":"chs.ac.bd",
+      "background_color":"#eae8e8",
+      "theme_color":"#ff7373",
+      "display":"fullscreen"
+  }
